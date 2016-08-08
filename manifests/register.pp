@@ -11,7 +11,7 @@
 class avamar::register inherits avamar::params {
 
   case $::osfamily {
-    Windows: {
+    'Windows': {
       exec { 'register':
         command     => "cd \"${avamar::params::pkg_path}\"; .\\avregister.bat \"${avamar::params::host}\" \"${avamar::params::domain}\";",
         refreshonly => true,
