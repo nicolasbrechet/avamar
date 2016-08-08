@@ -39,7 +39,7 @@ class avamar::params (
             }
           }
         }
-        '6': {
+        /(6|7)/: {
           case $::architecture {
             'x86_64': {
               $pkg_name = "${base}-${version}.x86_64"
