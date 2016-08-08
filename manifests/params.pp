@@ -24,8 +24,8 @@ class avamar::params (
     'RedHat': {
       $provider = 'rpm'
       $type     = 'rpm'
-      case $::lsbmajdistrelease {
-        /(4|5)/: {
+      case $::operatingsystemrelease {
+        /(^4|^5)/: {
           case $::architecture {
             'x86_64': {
               $pkg_name = "${base}-${version}.x86_64"
@@ -39,7 +39,7 @@ class avamar::params (
             }
           }
         }
-        /(6|7)/: {
+        /(^6|^7)/: {
           case $::architecture {
             'x86_64': {
               $pkg_name = "${base}-${version}.x86_64"
@@ -58,8 +58,8 @@ class avamar::params (
     'Suse': {
       $provider = 'rpm'
       $type     = 'rpm'
-      case $::lsbmajdistrelease {
-        '10':{
+      case $::operatingsystemrelease {
+        /(^10)/:{
           case $::architecture {
             'x86_64': {
               $pkg_name = "${base}-${version}.x86_64"
@@ -73,7 +73,7 @@ class avamar::params (
             }
           }
         }
-        '11':{          
+        /(^11)/:{          
           case $::architecture {
             'x86_64': {
               $pkg_name = "${base}-${version}.x86_64"
